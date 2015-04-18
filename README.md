@@ -1,5 +1,8 @@
 # ObjectEuqality
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/crazytonyli/Bitrix/LICENSE)
+[![Build Status](https://travis-ci.org/crazytonyli/ObjectEquality.svg?branch=master)](https://travis-ci.org/crazytonyli/ObjectEquality)
+
 Override `isEqual:` and `hash` methods with one line of code:
 
 ```objc
@@ -15,7 +18,6 @@ Override `isEqual:` and `hash` methods with one line of code:
 equality_properties(Person, name, age);
 
 @end
-
 ```
 
 The `equality_properties` macro will generate `isEqual:` and `hash` methods, and also add an `isEqualToXxx` (`isEqualToPerson:` in this case) method.
@@ -28,3 +30,7 @@ The `equality_properties` macro will generate `isEqual:` and `hash` methods, and
 ## Hash
 
 The hash algorithm is writed by [Mike Ash](https://www.mikeash.com/pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html).
+
+## License
+
+ObjectEuqality is available under the MIT license. See the LICENSE file for more info.
