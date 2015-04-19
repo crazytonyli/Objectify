@@ -12,7 +12,22 @@
 #import "metamacros.h"
 
 /**
- * Generate `isEqualToXxx:`, `isEqual:` and `hash` message based on properties.
+ * Generate `isEqualToXxx:`, `isEqual:` and `hash` methods based on properties.
+ *
+ * Say we have a class named `CTLPerson` which has two properties: `firstName`
+ * and `lastName`, and we decide that if two person have same first name and
+ * last name, then they are same person. All we need to do is put following
+ * code in the implementation of `CTLPerson`.
+ *
+ * > equality_properties(Person, firstName, lastName)
+ *
+ * Now `CTLPerson` class implementes `isEqualToPerson:`, `isEqual:` and `hash` methods.
+ *
+ * @param NAME Name of object class. An `isEqualTo<Name>:` method will be generated.
+ *             e.g. for a class named `CTLPerson`, you should pass in `Person`
+ *             as the `NAME` argument
+ * @param ...  Names of properties which will be used in object value comparison.
+ *             You can pass one or many (up to 20) arguments here.
  */
 #define equality_properties(NAME, ...) \
     \
