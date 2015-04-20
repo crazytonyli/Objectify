@@ -30,7 +30,7 @@ and also add an `isEqualToXxx:` (`isEqualToPerson:` in this case) method.
 
 ## Hash
 
-The hash algorithm is from [Mike Ash's blog post]
+The hash algorithm is from [Mike Ash's blog post].
 
 ## License
 
