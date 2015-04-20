@@ -9,7 +9,7 @@ Override `isEqual:` and `hash` methods with one line of code:
 @interface Person : NSObject
 
 @property (nonatomic, strong) NSString *firstName;
-@property (nonatomic, assign) NSString *lastName;
+@property (nonatomic, strong) NSString *lastName;
 
 @end
 
