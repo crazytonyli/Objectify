@@ -1,6 +1,7 @@
 # ObjectEquality
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/crazytonyli/ObjectEquality/blob/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/v/ObjectEquality.svg?style=flat)](https://cocoapods.org/pods/ObjectEquality)
 [![Build Status](https://travis-ci.org/crazytonyli/ObjectEquality.svg?branch=master)](https://travis-ci.org/crazytonyli/ObjectEquality)
 
 Override `isEqual:` and `hash` methods with one line of code:
