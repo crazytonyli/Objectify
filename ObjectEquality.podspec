@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ObjectEquality"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Override `isEqual:` and `hash` methods with one line of code."
   s.description  = <<-DESC
                    Override `isEqual:` and `hash` methods according to object
