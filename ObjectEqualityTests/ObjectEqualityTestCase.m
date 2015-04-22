@@ -26,6 +26,10 @@
 
 @end
 
+@interface NoPropertyClass : NSObject
+
+@end
+
 @implementation Person
 
 equality_properties(Person, name, age)
@@ -35,6 +39,12 @@ equality_properties(Person, name, age)
 @implementation Student
 
 equality_properties(Student, name, age, school)
+
+@end
+
+@implementation NoPropertyClass
+
+equality_properties(NoPropertyClass)
 
 @end
 
@@ -65,11 +75,6 @@ equality_properties(Student, name, age, school)
     self.person2 = [Person new];
     self.person3 = [Person new];
     self.student = [Student new];
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
 }
 
 - (void)testNilPropertiesEqual {
@@ -110,6 +115,10 @@ equality_properties(Student, name, age, school)
     self.person1.name = @"Tony";
     self.student.name = @"Tony";
     objects_should_not_be_equal(self.person1, self.person2);
+}
+
+- (void)testNoPropertyClassAreAllEqual {
+    objects_should_be_equal([NoPropertyClass new], [NoPropertyClass new]);
 }
 
 @end

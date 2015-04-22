@@ -23,36 +23,46 @@
  *
  * Now `CTLPerson` class implementes `isEqualToPerson:`, `isEqual:` and `hash` methods.
  *
- * @param NAME Name of object class. An `isEqualTo<Name>:` method will be generated.
- *             e.g. for a class named `CTLPerson`, you should pass in `Person`
- *             as the `NAME` argument
- * @param ...  Names of properties which will be used in object value comparison.
- *             You can pass one or many (up to 20) arguments here.
+ *
+ * First argument:  Name of object class. An `isEqualTo<Name>:` method will be
+ *                  generated. e.g. For a class named `CTLPerson`, you should
+ *                  pass in `Person` as the `NAME` argument
+ * Other arguments: Names of properties which will be used in object value
+ *                  comparison. You can pass none or many (up to 20) arguments here.
+ *                  No property passed indicates objects are equal if they are
+ *                  exactly some class.
+ *                  One or many properties passed indicates objects are equal if
+ *                  all value of the passed properties are equal.
  */
-#define equality_properties(NAME, ...) \
+#define equality_properties(...) \
     \
-    - (BOOL)isEqualTo ## NAME:(id)obj { \
+    - (BOOL)metamacro_concat(isEqualTo, metamacro_at(0, __VA_ARGS__)):(id)obj { \
         if (obj == nil) { return NO; } \
         if (self == obj) { return YES; } \
-        return metamacro_foreach(_equality_equal_iter, &&, __VA_ARGS__); \
+        metamacro_if_eq(1, metamacro_argcount(__VA_ARGS__)) \
+            (return [self class] == [obj class];) \
+            (return metamacro_foreach(_equality_equal_iter, &&, metamacro_tail(__VA_ARGS__));) \
     } \
     \
     - (BOOL)isEqual:(id)obj { \
-        if (obj == nil) { return NO; } \
-        if (self == obj) { return YES; } \
         if ([obj class] != [self class]) { return NO; } \
-        return [self isEqualTo ## NAME:obj]; \
+        return [self metamacro_concat(isEqualTo, metamacro_at(0, __VA_ARGS__)):obj]; \
     } \
     \
     - (NSUInteger)hash { \
         NSUInteger hash = 0; \
-        metamacro_foreach(_equality_hash_iter,, __VA_ARGS__); \
+        metamacro_if_eq(1, metamacro_argcount(__VA_ARGS__)) \
+            (hash = [[self class] hash];) \
+            (metamacro_foreach(_equality_hash_iter,, metamacro_tail(__VA_ARGS__));) \
         return hash; \
     }
 
 #define _equality_equal_iter(INDEX, VAL) \
-    ([self valueForKey:@keypath(self, VAL)] == [obj valueForKey:@keypath(self, VAL)] \
-        || [[self valueForKey:@keypath(self, VAL)] isEqual:[obj valueForKey:@keypath(self, VAL)]])
+    ({ \
+        id value1 = [self valueForKey:@keypath(self, VAL)]; \
+        id value2 = [obj valueForKey:@keypath(self, VAL)]; \
+        (value1 == value2 || [value1 isEqual:value2]); \
+    })
 
 // Hash algorithm by Mike Ash:
 // https://www.mikeash.com/pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html
