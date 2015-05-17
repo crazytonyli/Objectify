@@ -1,6 +1,6 @@
 //
 //  ObjectEquality.h
-//  ObjectEquality
+//  Objectify
 //
 //  Created by Tony Li on 4/18/15.
 //  Copyright (c) 2015 Tony Li. All rights reserved.

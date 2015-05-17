@@ -1,18 +1,18 @@
-# ObjectEquality
+# Objectify
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/crazytonyli/ObjectEquality/blob/master/LICENSE)
-[![CocoaPods](https://img.shields.io/cocoapods/v/ObjectEquality.svg?style=flat)](https://cocoapods.org/pods/ObjectEquality)
-[![Build Status](https://travis-ci.org/crazytonyli/ObjectEquality.svg?branch=master)](https://travis-ci.org/crazytonyli/ObjectEquality)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/crazytonyli/Objectify/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/crazytonyli/Objectify.svg?branch=master)](https://travis-ci.org/crazytonyli/Objectify)
 
-Override `isEqual:` and `hash` methods with one line of code:
+## Features
+
+Objectify contains following features:
+
+- ObjectEquality: Override `isEqual:` and `hash` methods with one line of code
+- ObjectDescription: Override `description` method with one line of code
+
+## ObjectEquality
 
 ```objc
-@interface Person : NSObject
-
-@property (nonatomic, strong) NSString *firstName;
-@property (nonatomic, strong) NSString *lastName;
-
-@end
 
 @implementation Person
 
@@ -24,18 +24,35 @@ equality_properties(Person, firstName, lastName);
 The `equality_properties` macro will generate `isEqual:` and `hash` methods,
 and also add an `isEqualToXxx:` (`isEqualToPerson:` in this case) method.
 
-## Equality
+### Equality
 
 * Objects are not equal if they are not same class.
 * Objects are equal if values of specified properties are all equal.
 
-## Hash
+### Hash
 
 The hash algorithm is from [Mike Ash's blog post].
 
+# ObjectDescription
+
+Override `description` with one line of code:
+
+```objc
+@implementation Person
+
+description_properties(firstName, lastName);
+
+@end
+```
+
+The `description_properties` macro will generate `description` method
+which will return formatted string:
+
+    <ClassName: PointerAddress, prop0=value0, prop1=value1 ... >
+
 ## License
 
-ObjectEquality is available under the MIT license. See the LICENSE file for
+Objectify is available under the MIT license. See the LICENSE file for
 more info.
 
 

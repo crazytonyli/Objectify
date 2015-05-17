@@ -1,6 +1,6 @@
 //
 //  ObjectEqualityTestCase.m
-//  ObjectEquality
+//  Objectify
 //
 //  Created by Tony Li on 4/18/15.
 //  Copyright (c) 2015 Tony Li. All rights reserved.
@@ -13,14 +13,14 @@
 
 #pragma mark - Model
 
-@interface Person : NSObject
+@interface PersonEquality : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) NSUInteger age;
 
 @end
 
-@interface Student : Person
+@interface StudentEquality : PersonEquality
 
 @property (nonatomic, strong) NSString *school;
 
@@ -30,13 +30,13 @@
 
 @end
 
-@implementation Person
+@implementation PersonEquality
 
 equality_properties(Person, name, age)
 
 @end
 
-@implementation Student
+@implementation StudentEquality
 
 equality_properties(Student, name, age, school)
 
@@ -59,11 +59,11 @@ equality_properties(NoPropertyClass)
 
 @interface ObjectEqualityTestCase : XCTestCase
 
-@property (nonatomic, strong) Person *person1;
-@property (nonatomic, strong) Person *person2;
-@property (nonatomic, strong) Person *person3;
-@property (nonatomic, strong) Student *student;
-@property (nonatomic, strong) Student *student2;
+@property (nonatomic, strong) PersonEquality *person1;
+@property (nonatomic, strong) PersonEquality *person2;
+@property (nonatomic, strong) PersonEquality *person3;
+@property (nonatomic, strong) StudentEquality *student;
+@property (nonatomic, strong) StudentEquality *student2;
 
 @end
 
@@ -71,10 +71,10 @@ equality_properties(NoPropertyClass)
 
 - (void)setUp {
     [super setUp];
-    self.person1 = [Person new];
-    self.person2 = [Person new];
-    self.person3 = [Person new];
-    self.student = [Student new];
+    self.person1 = [PersonEquality new];
+    self.person2 = [PersonEquality new];
+    self.person3 = [PersonEquality new];
+    self.student = [StudentEquality new];
 }
 
 - (void)testNilPropertiesEqual {

@@ -9,15 +9,29 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B9EEE4EB1B082A8000F8AED1"
+               BuildableName = "libObjectify.a"
+               BlueprintName = "Objectify"
+               ReferencedContainer = "container:Objectify.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B9B70DEA1AE2A7C100DFF042"
-               BuildableName = "ObjectEqualityTests.xctest"
-               BlueprintName = "ObjectEqualityTests"
-               ReferencedContainer = "container:ObjectEquality.xcodeproj">
+               BlueprintIdentifier = "B9EEE4F61B082A8000F8AED1"
+               BuildableName = "ObjectifyTests.xctest"
+               BlueprintName = "ObjectifyTests"
+               ReferencedContainer = "container:Objectify.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B9B70DEA1AE2A7C100DFF042"
-               BuildableName = "ObjectEqualityTests.xctest"
-               BlueprintName = "ObjectEqualityTests"
-               ReferencedContainer = "container:ObjectEquality.xcodeproj">
+               BlueprintIdentifier = "B9EEE4F61B082A8000F8AED1"
+               BuildableName = "ObjectifyTests.xctest"
+               BlueprintName = "ObjectifyTests"
+               ReferencedContainer = "container:Objectify.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B9B70DEA1AE2A7C100DFF042"
-            BuildableName = "ObjectEqualityTests.xctest"
-            BlueprintName = "ObjectEqualityTests"
-            ReferencedContainer = "container:ObjectEquality.xcodeproj">
+            BlueprintIdentifier = "B9EEE4EB1B082A8000F8AED1"
+            BuildableName = "libObjectify.a"
+            BlueprintName = "Objectify"
+            ReferencedContainer = "container:Objectify.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +75,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B9B70DEA1AE2A7C100DFF042"
-            BuildableName = "ObjectEqualityTests.xctest"
-            BlueprintName = "ObjectEqualityTests"
-            ReferencedContainer = "container:ObjectEquality.xcodeproj">
+            BlueprintIdentifier = "B9EEE4EB1B082A8000F8AED1"
+            BuildableName = "libObjectify.a"
+            BlueprintName = "Objectify"
+            ReferencedContainer = "container:Objectify.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +93,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B9B70DEA1AE2A7C100DFF042"
-            BuildableName = "ObjectEqualityTests.xctest"
-            BlueprintName = "ObjectEqualityTests"
-            ReferencedContainer = "container:ObjectEquality.xcodeproj">
+            BlueprintIdentifier = "B9EEE4EB1B082A8000F8AED1"
+            BuildableName = "libObjectify.a"
+            BlueprintName = "Objectify"
+            ReferencedContainer = "container:Objectify.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

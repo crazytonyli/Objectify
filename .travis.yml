@@ -1,2 +1,2 @@
 language: objective-c
-script: xctool test -sdk iphonesimulator -scheme ObjectEqualityTests -reporter junit:test-reporter.xml
+script: xctool test -sdk iphonesimulator -scheme ObjectifyTests
