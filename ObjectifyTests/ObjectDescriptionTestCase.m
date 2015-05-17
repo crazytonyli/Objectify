@@ -28,7 +28,6 @@ description_properties(name)
 @implementation ObjectDescriptionTestCase
 
 - (void)testDescription {
-    XCTAssert(YES, @"Pass");
     PersonDesc *p = [PersonDesc new];
     p.name = @"Tony Li";
     XCTAssertTrue([p.description containsString:p.name]);
