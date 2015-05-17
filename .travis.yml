@@ -1,2 +1,2 @@
 language: objective-c
-script: xctool test -sdk iphonesimulator -scheme ObjectifyTests
+script: xctool test -sdk iphonesimulator -configuration Release -scheme ObjectifyTests
