@@ -33,7 +33,7 @@ and also add an `isEqualToXxx:` (`isEqualToPerson:` in this case) method.
 
 The hash algorithm is from [Mike Ash's blog post].
 
-# Object Description
+## Object Description
 
 Override `description` with one line of code:
 
