@@ -3,7 +3,7 @@
 //  Objectify
 //
 //  Created by Tony Li on 5/16/15.
-//  Copyright (c) 2015 Tony Li. All rights reserved.
+//  Copyright (c) 2015 - 2016 Tony Li. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
